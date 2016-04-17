@@ -1,0 +1,69 @@
+******************************************************************************************************************************************************	
+		
+1.2 Usando npm para crear automáticamente las apps web	
+
+	- Antes que nada, ejecutar la línea de comandos desde la carpeta donde se debe ejecutar ojo!
+		
+	- Para crear aplicaciones, hay que ir a la línea de comandos de Visual Studio Code (vscode) y ejecutar:
+		C:\Exercices\AspNet5> code			//Abrimos el aplicativo de Visual Studio Code
+	- Luego, ejecutamos 
+		C:\Exercices\AspNet5> npm install yo -g		//Para instalar Node.JS (IO) para instalar globalmente
+								//Si tenías Node.JS instalado anteriormente, lo actualizará (avisa de antemano)
+	- Si queremos instalar templates, ejecutamos el siguiente código:
+		C:\Exercices\AspNet5> npm install generator-aspnet
+		
+	- Luego, ejecutamos el YO para ejecutar el generador asp:
+		C:\Exercices\AspNet5> yo
+		
+	- Mejor de esta manera. Es más completo:
+		C:\Exercices\AspNet5> yo aspnet			//Ejecutamos el UI desde línea de comandos para seleccionar el tipo de app web
+		
+	* La consola te va a mostrar varias opciones para crear un tipo de aplicación web. Tu escoges:
+	
+	- Puedes escoger con las flechas + enter o por número. En este caso, seleccionamos la aplicación por defecto para comenzar:
+		C:\Exercices\AspNet5> 3				//Web Application
+		
+	- Ahora colocar un nombre a la aplicación desde el generador de aplicaciones:	BasicAspNet5WebApplication
+	
+	- Ejecutamos... y ya se creó el proyecto!!
+	
+	- No olviden subir sus cambios al Github :D
+	
+	- Verificar los siguientes archivos: 
+		- project.json					//Viste las dependencias? Son las librerías que inicialmente se usan para una app Mvc :)
+								//Tiene otras cosas como: versión, namespace, comandos, 
+								  frameworks (visto en la app "Hola Mundo", 
+								  Averiguar: Exclude, publishExclude, scripts
+								//Command > web : Para hostear la app Web de la siguiente manera (línea de comandos):
+								
+								C:\Exercices\AspNet5> dnx web
+								
+								//Con esto, deberíamos levantar nuestra aplicación (así como la versión de consola) con el IIS
+								
+								//Si no te levanta la app, es porque algunas dependencias indicadas en el target server no
+								  están instaladas. Verificar las dependencias que falten (en rojo) con esta sentencia:
+								
+								C:\Exercices\AspNet5> dnx list
+								
+								//Luego, restablecemos esas dependencias que están seteadas dentro del archivo project.json
+								  para que puedan funcionar en esta app web:
+								
+								C:\Exercices\AspNet5> dnu restore  
+								  
+								//Si quieres hacer que tus proyectos compilen correctamente, ejecutar:
+								
+								C:\Exercices\AspNet5> dnu build
+								
+								//Ahora si, por favor iniciar nuevamente el levantamiento del servidor IIS y el host de la app web:
+								
+								C:\Exercices\AspNet5> dnx web
+								
+								//Ahora que ejecutó bien, copiar la dirección del servidor (localhost) y puerto asignado (5000)
+								  para ver la aplicación web levantada:
+								  
+								http://localhost:5000
+								
+								Tiene que salirte una app plantilla interesante. Verificar desde el navegador :)
+								La app tiene enlaces a tutoriales de MVC 6 :)
+							
+								//Intellisense
